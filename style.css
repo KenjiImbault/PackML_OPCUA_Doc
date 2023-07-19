@@ -1,0 +1,22 @@
+:root{
+    --margin-tree: 5%;
+}
+
+.tree{
+    font-size: 140%;
+}
+
+#tree_0{
+}
+
+#tree_1{
+    margin-left: var(--margin-tree);
+}
+
+#tree_2{
+    margin-left: calc(var(--margin-tree)*2);
+}
+
+.content{
+    font-size: 140%;
+}
