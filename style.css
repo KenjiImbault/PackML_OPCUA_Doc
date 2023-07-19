@@ -10,11 +10,11 @@
 }
 
 #tree_1{
-    margin-left: var(--margin-tree);
+    /*margin-left: var(--margin-tree);*/
 }
 
 #tree_2{
-    margin-left: calc(var(--margin-tree)*2);
+    /*margin-left: calc(var(--margin-tree)*2);*/
 }
 
 .content{
