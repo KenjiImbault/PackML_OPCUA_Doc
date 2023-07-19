@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Create a machine instance</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Create a machine instance</h1>
+    
+    <div class="content">
+    <ul>
+        <li>Open <i>PackMLStateMachineNodeManager.cs</i> in Visual Studio</li>
+        <li>Develop the <i>Overridden Methods</i> region</li>
+        <li>Develop the <i>Startup()</i> method</li>
+        <li>Note: By default the server already creates an instance called "Machine1"</li>
+        <li>To remove this default instance, remove the code starting from the comment "<i>// Create an instance of a machine called "Machine1</i>" until <i>LinkModelToNode(node.NodeId, model, null, null, 500);</i></li>
+        See image below (in red, the code to remove): <br />
+        <img src="../../images/codeToRemoveInstance.jpg" alt="Code to remove in highlighted in red" style="width:743px;height:434px;" />
+        <li>To add another instance, copy the code in comment starting from <i>"// Create an instance of a machine called "MachineInstance"</i>"</li>
+        <li>Paste the code above the comment</li>
+        <li>In the code you copied, replace all "MachineInstance" by the name of your machine</li>
+        <li>Note: The initial state of the machine will be "IDLE", you can change the initial state of the machine by changing the "1" to another integer in <i>...Model.UpdateState(..Model, <b>1</b>)</i> (See the list of possible values <a href="../../cheatsheet.html">here</a>)</li>
+        <li>You can create as much instance as needed</li>
+        <li>You will find an example below with 2 machines: <i>PrinterPaper</i> and <i>Printer3D</i></li>
+        <img src="../../images/instancesOfTwoMachines.jpg" alt="Code that shows how to make 2 machine instances" style="width:651px;height:641px;" />
+    </ul>
+    </div>
+    
+  </body>
+</html>

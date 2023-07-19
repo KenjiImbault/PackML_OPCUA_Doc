@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: View a variable</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>View a variable</h1>
+    
+    <div class="content">
+    <ul>
+        <li>In UaExpert with the client connected to the server, locate the Address Space on the bottom left corner of the screen.</li>
+        <li>Click on the arrow on the left of the machine that interests you (example below with the instance "Printer3D").</li>
+        <img src="../../images/UaExpertInstanceVariable.jpg" alt="UaExpert screen showing the children of the instance Printer3D" />
+        <li>There are 5 variables that may interest you in an instance of a machine: The name of the machine (MachineName), the state of the machine (CurrentState), and the alarms, stack lights, buttons (all located in the <i>Dictionnaries</i> folder.</li>
+        <li>To see the content of one variable, simply drag-and-drop it to the Data Access View (which is the blank page in the center of the screen).</li>
+        <li>You can also drag-and-drop the <i>Dictionnaries</i> folder to see the Alarms, Buttons, and StackLights variables. Just click "Yes" on the pop-up window.</li>
+        <li>Below is a screen showing the 5 variables of the Printer3D instance</li>
+        <img src="../../images/UaExpertInstanceVariables.jpg" alt="UaExpert screen showing the variables of the Printer3D instance" style="width:1124px;height:786px;" />
+        <li>Note that you can change the variables directly into the Data Access View, but this is not recommanded. Use the methods instead.</li>
+        <li>Most likely all variables are empty (except the CurrentState variable), this is normal.</li>
+    </ul>
+    </div>
+    
+  </body>
+</html>

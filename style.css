@@ -20,3 +20,7 @@
 .content{
     font-size: 140%;
 }
+
+div.cheatsheet td, div.cheatsheet th{
+    border: 1px solid #dddddd;
+}
