@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: General CSV File</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>General csv file</h1>
+    
+    <div class="content">
+    <p>
+    In the "Data" folder, you can find an example on how to format the .csv files for the alarms called "<i>__Template_Machine.csv</i>"<br />
+    In more detail (Please note that the first column is reserved for headers):
+    <ul>
+        <li>General</li>
+        <ul>
+            <li>The cell B1 is where you will input the name of the machine.</li>
+            <li>The cell B2 is where you will input the state of the machine. (In all caps, using the name of the state.)</li>
+        </ul>
+        <li>Alarms</li>
+        <ul>
+            <li>The cells on the 4th line will be where you input the ID of the alarms.</li>
+            <li>The cells on the 5th line will be where you input the transition of the alarms. (Make sure that the transition is written <b>exactly</b> like in the <a href="../../cheatsheet.html">cheatsheet</a>.)</li>
+            <li>The cells on the 6th line will be where you input the message of the alarm.</li>
+            <li>The cells on the 7th line will be where you input the state of the alarm. ("TRUE" for ON, or "FALSE" for OFF)</li>
+        </ul>
+        <li>Stack lights</li>
+        <ul>
+            <li>The cells on the 9th line will be where you input the ID of the stack lights.</li>
+            <li>The cells on the 10th line will be where you input the description of the stack lights.</li>
+            <li>The cells on the 11th line will be where you input the state of the stack lights. ("TRUE" for ON, or "FALSE" for OFF)</li>
+        </ul>
+        <li>Buttons</li>
+        <ul>
+            <li>The cells on the 13th line will be where you input the ID of the buttons. If a button has multiple transitions, type the ID multiple times.</li>
+            <li>The cells on the 14th line will be where you input the names of the buttons. If a button has multiple transitions, type the name multiple times.</li>
+            <li>The cells on the 15th line will be where you input the transitions of the buttons. (Make sure that the transition is written <b>exactly</b> like in the <a href="../../cheatsheet.html">cheatsheet</a>.)</li>
+        </ul>
+    </ul>
+    
+    Reading this file using a method in an instance will:
+    <ul>
+        <li>Change the name of the machine</li>
+        <li>Change the state of the machine</li>
+        <li>Add all of the alarms</li>
+        <li>Add all of the stack lights</li>
+        <li>Add all of the buttons</li>
+    </ul>
+    
+    </p>
+    </div>
+  </body>
+</html>

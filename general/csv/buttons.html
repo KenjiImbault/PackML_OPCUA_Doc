@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Button CSV File</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Button csv file</h1>
+    
+    <div class="content">
+    <p>
+    In the "Data" folder, you can find an example on how to format the .csv files for the buttons called "<i>_Template_Commands.csv</i>"<br />
+    In more detail (Please note that the first line is reserved for headers):
+    <ul>
+        <li>
+        The first column contains the button ID of each button. <br />
+        Each ID is unique. (However it must only be unique in the same file. Meaning you can have one ID "1" in file A and one ID "1" in file B)
+        </li>
+        
+        <li>The second column contains the button name.</li>
+        
+        <li>The third column contains the transition tag values to apply once the button is triggered. Please refer to <a href="../../cheatsheet.html">this link</a> to see the correspondance between the transitions and their tag value.</li>
+    </ul>
+    To make one button having multiple transitions, leave blank cells between the buttons. See example below for more clarity.<br />
+    <img src="../../images/buttonsCSV.jpg" alt="Screen of .csv opened in Excel" /><br />
+    Here, the red square highlights the buttonA (with id=1). This button has 5 transitions: 4, 5, 6, 7 and 8<br />
+    The blue square highlights the buttonB (with id=2). This button has a single transition: 6<br />
+    The green square highlights the buttonC (with id=3). This button has 2 transitions: 2 and 3<br /><br />
+    Reading this file using a method in an instance will add all of the buttons in the instance.
+    </p>
+    </div>
+  </body>
+</html>

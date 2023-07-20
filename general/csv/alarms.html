@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Alarm CSV File</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Alarm csv file</h1>
+    
+    <div class="content">
+    <p>
+    In the "Data" folder, you can find an example on how to format the .csv files for the alarms called "<i>_Template_Alarms.csv</i>"<br />
+    In more detail (Please note that the first line is reserved for headers):
+    <ul>
+        <li>
+        The first column contains the alarm ID of each alarm. <br />
+        Each ID is unique. (However it must only be unique in the same file. Meaning you can have one ID "1" in file A and one ID "1" in file B)
+        </li>
+        <li>The second column contains the transition tag value to apply once the alarm is triggered. Please refer to <a href="../../cheatsheet.html">this link</a> to see the correspondance between the transitions and their tag value.</li>
+        <li>The third column contains the message to display once the alarm is triggered.</li>
+    </ul>
+    Reading this file using a method in an instance will add all of the alarms in the instance.
+    </p>
+    </div>
+  </body>
+</html>

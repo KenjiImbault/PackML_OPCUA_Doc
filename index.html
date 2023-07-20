@@ -24,8 +24,8 @@
         </ul>
         <li><a id="tree_1" href="general/csv.html">Create the .csv files</a></li>
         <ul>
-            <li><a id="tree_2" href="general/csv/alarm.html">Alarm .csv file</a></li>
-            <li><a id="tree_2" href="general/csv/stacklight.html">Stack light .csv file</a></li>
+            <li><a id="tree_2" href="general/csv/alarms.html">Alarm .csv file</a></li>
+            <li><a id="tree_2" href="general/csv/stacklights.html">Stack light .csv file</a></li>
             <li><a id="tree_2" href="general/csv/buttons.html">Buttons .csv file</a></li>
             <li><a id="tree_2" href="general/csv/general.html">General .csv file</a></li>
         </ul>
@@ -36,7 +36,7 @@
     </ul>
         <li><a id="tree_0" href="code.html">Code</a></li>
             <ul>
-                <li><a id="tree_2" href="general/code/???.html">???</a></li>
+                <li><a id="tree_2" href="code/???.html">???</a></li>
             </ul>
         <li><a id="tree_0" href="cheatsheet.html">Cheat Sheet</a></li>
     </div>
@@ -49,13 +49,94 @@
         <p>
         This application simulates state machines. <br />
         The user can then call methods on these machines to change their state. <br />
-        More features are available, such as saving, loading, alarms...
+        A machine is defined by a number of features: <br />
+        
+        <ul>
+            <li>The name of the machine (For example PrinterPaper, Printer3D, MillingMachine...)</li>
+            <li>The state of the machine (idle, starting, resetting...)</li>
+            <li>The alarms located in the machine (if any)</li>
+            <li>The stack lights located in the machine (if any)</li>
+            <li>The buttons located in the machine (if any)</li>
+        </ul>
+        
         </p>
         <p>
         The state machines were designed by following the <a href="PackML_Unit_Machine_Implementation_Guide V2-03.pdf">implementation guide of PackML (.pdf).</a>
         </p>
         
         <img src="images/statemachine.jpg" alt="A state machine" style="width:869px;height:435px;" />
+        
     </div>
+          
+    <h1>States and transitions</h1>
+    <div class="content">
+        <p>
+        A machine is in a certain state, and a transition may be applied to the machine to change its state.<br />
+        For example, if the machine is in the state IDLE (like on the image above), then the following transitions may be applied:<br />
+        <ul>
+            <li>The transition "Start" will change the state to "STARTING".</li>
+            <li>The transition "Stop" will change the state to "STOPPING".</li>
+            <li>The transition "Abort" will change the state to "ABORTING".</li>
+        </ul>
+        If you try to apply a transition to the machine but the transition is not available (for example trying to apply the transition "Clear" when the machine is in the state "IDLE") will either:
+        <ul>
+            <li>Throw an error and stop the program.</li>
+            <li>Do nothing.</li>
+        </ul>
+        </p>
+    </div>
+    
+    <h1>Alarms</h1>
+    <div class="content">
+        <p>
+        An alarm on a machine is defined by the following:
+        <ul>
+            <li>Its ID.</li>
+            <li>The message displayed when the alarm is triggered. (For example "No more paper in the printer".)</li>
+            <li>The transition to apply (if there is one) when the alarm is triggered. (For example the "Hold" transition.)<br />
+            (Note: If the transition is not available, the alarm gets triggered but the state doesn't change.)</li>
+            <li>The state of the alarm. (ON/OFF)</li>
+        </ul>
+        <br />
+        Triggering an alarm will therefore:
+        <ul>
+            <li>Apply the transition associated with the alarm (if there is one) to the state machine.</li>
+            <li>Change the state of the alarm to ON.</li>
+        </ul>
+        <br />
+        Untriggering the alarm will simply change the state of the alarm to OFF.
+        </p>
+    </div>
+    <h1>Stack lights</h1>
+    <div class="content">
+        <p>
+        A stack light on a machine is defined by the following:
+        <ul>
+            <li>Its ID.</li>
+            <li>Its description. (For example: "Red flashing", "Blue solid", "Horn"...)</li>
+            <li>The state of the alarm (ON/OFF).</li>
+        </ul>
+
+        <br />
+        Triggering a stack light will change its state to "ON".<br />
+        Untriggering a stack light will change its state to "OFF".
+        </p>
+    </div>
+    
+    <h1>Buttons</h1>
+    <div class="content">
+        <p>
+        A button on a machine is defined by the following:
+        <ul>
+            <li>Its ID.</li>
+            <li>Its name. (For example: "Pause/Resume","Hold/Unhold", "Start"...)</li>
+            <li>The actions to take. Which is a list of transitions.</li>
+        </ul>
+        Triggering a button will apply the first available transition from its list.<br />
+        For example, if a button that has the following transitions is triggered: Suspend, Stop, Unhold, Start,<br />
+        and the machine is in the state IDLE, then the transition "Stop" will be applied to the machine (and it will then change its state to "STOPPING")
+        </p>
+    </div>
+    
   </body>
 </html>
