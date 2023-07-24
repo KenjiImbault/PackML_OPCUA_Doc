@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Data Type: AlarmType</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Data Type: AlarmType</h1>
+    
+    <div class="content">
+    This data type describes an alarm.<br />
+    The alarm is defined with 4 components:
+    <ul>
+    <li>The ID (int) of the alarm. (The ID is unique for each machine, however two machines can have different alarms with the same ID.)</li>
+    <li>The message (string) of the alarm to be displayed when the alarm is triggered. (For example: "Error - No more paper")</li>
+    <li>The transition (int) to be applied to the machine if the alarm is triggered. The transition number corresponds to the PackML Tag Values. (Check the <a href="../../cheatsheet.html">cheatsheet</a>.)</li>
+    <li>The state (true/false) of the alarm. If the state is "true", then the alarm is triggered. Otherwise it is off.</li>
+    </ul>
+    </div>
+    
+  </body>
+</html>

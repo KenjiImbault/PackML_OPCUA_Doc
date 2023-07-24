@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Data Type: ProcessType</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Data Type: ProcessType</h1>
+    
+    <div class="content">
+    This data type describes a process.<br />
+    A process is a series of transition to apply after a certain ammount of time.<br />
+    A process is defined with 3 components:
+    <ul>
+    <li>The number of loops (int). This corresponds to the number of time to execute the transitions.</li>
+    <li>The commands (int[]) to apply. Each transition will be applied in sequential order. (For example {2, 10, 1} will execute Start -> Complete -> Reset to the machine)</li>
+    <li>The time to execute a StateCompleted transition (int).</li>
+    <li>The time to execute any other transition (int).</li>
+    </ul>
+    </div>
+    
+  </body>
+</html>

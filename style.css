@@ -21,6 +21,6 @@
     font-size: 140%;
 }
 
-div.cheatsheet td, div.cheatsheet th{
-    border: 1px solid #dddddd;
+div.table-a td, div.table-a th, div.table-a table{
+    border: 1px solid black;
 }

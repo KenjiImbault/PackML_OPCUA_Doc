@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Data Type: ButtonType</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body>
+    <a href="../../index.html" >Go back</a>
+    <hr />
+    <h1>Data Type: ButtonType</h1>
+    
+    <div class="content">
+    This data type describes a button.<br />
+    The button is defined with 3 components:
+    <ul>
+    <li>The ID (int) of the button. (The ID is unique for each machine, however two machines can have different buttons with the same ID.)</li>
+    <li>The name (string) of the button. (For example: "Pause/Resume" or "Start".)</li>
+    <li>The commands (int[]) of the button. It's a list of int with each int representing a transition number. The transition number corresponds to the PackML Tag Values. (Check the <a href="../../cheatsheet.html">cheatsheet</a>.)<br />
+    If a button is triggered, it will try to apply the first transition. If it can't apply the first transition, it will try the second one. So on and so on until a transition is applied, or if no transition can be applied: nothing happens.</li>
+    </ul>
+    </div>
+    
+  </body>
+</html>
