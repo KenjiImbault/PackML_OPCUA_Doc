@@ -2,17 +2,223 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>PackML_OPCUA: PackMLStateModelTypeMethods</title>
+    <title>PackML_OPCUA: Methods</title>
     <link rel="stylesheet" href="../style.css">
   </head>
   <body>
     <a href="../index.html" >Go back</a>
     <hr />
-    <h1>PackMLStateModelTypeMethods</h1>
+    <h1>Methods</h1>
     
     <div class="content">
     <p>
-    
+    In <span style="color:red;">red</span> are methods that are not implemented yet.
+    <div class="table-a">
+        <table style="text-align:center">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Input</th>
+            <th>Output</th>
+        </tr>
+            
+        <tr>
+            <td>AddAlarm(AlarmType alarm)</td>
+            <td>Add the defined alarm to the machine.<br />If the id of the alarm already exists, overwrite the existing alarm.</td>
+            <td>AlarmType alarm: The alarm to add.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>AddButtonsFromCSV(string filename, string delimiter)</td>
+            <td>Read a well formated .csv file and add the buttons to the machine.<br />
+            See "_Template_CommandMachines.csv" in the Data folder to see how to correctly format a .csv file.</td>
+            <td>string filename: the name of the file.<br />
+            string delimiter: the delimiter of the .csv file. Usually a comma.</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>AddStackLight(StackLightType stacklight)</td>
+            <td>Add the defined stack light to the machine.<br />If the id of the stack light already exists, overwrite the existing stack light.</td>
+            <td>StackLightType stack light: The stack light to add.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>AddAlarmsFromCSV(string filename, string delimiter)</td>
+            <td>Read a well formated .csv file and add the alarms to the machine.<br />
+            See "_Template_Alarms.csv" in the Data folder to see how to correctly format a .csv file.</td>
+            <td>string filename: the name of the file.<br />
+            string delimiter: the delimiter of the .csv file. Usually a comma.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>AddButtons(ButtonType button)</td>
+            <td>Add the defined button to the machine.<br />If the id of the button already exists, overwrite the existing button.</td>
+            <td>ButtonType button: The button to add.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>AddStackLightsFromCSV(string filename, string delimiter)</td>
+            <td>Read a well formated .csv file and add the stack lights to the machine.<br />
+            See "_Template_StackLights.csv" in the Data folder to see how to correctly format a .csv file.</td>
+            <td>string filename: the name of the file.<br />
+            string delimiter: the delimiter of the .csv file. Usually a comma.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>ExecuteProcess(ProcessType process)</td>
+            <td>The machine will execute the first command of the process,<br />
+            it will then wait and then try to execute a StateCompleted transition,<br />
+            before trying to execute the second command after waiting a certain amount of time, so on and so on.</td>
+            <td>ProcessType process: The process to apply to the machine.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>int[] GetAvailableCommands()</td>
+            <td>Output all the available commands to apply to the machine</td>
+            <td></td>
+            <td>int[] commands: The available commands</td>
+        </tr>
+        
+        <tr>
+            <td>int GetNext(int command)</td>
+            <td>Outputs the state of the machine if the command given as an input were applied to the machine.<br /> Throws an exception if the command is not applicable.</td>
+            <td>int command: The command to be applied.</td>
+            <td>int state: The state of the machine if the command were to be applied.</td>
+        </tr>
+        
+        <tr>
+            <td style="color:red;">ReadDataFromDB(string DBFileName)</td>
+            <td>Load the data from the database file into the machine.</td>
+            <td>string DBFileName: the name of the file.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>RemoveAlarm(int alarmID)</td>
+            <td>Remove the alarm corresponding with the alarm ID from the machine.</td>
+            <td>int alarmID: The ID of the alarm to remove.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>bool IsCommandAvailable(int command)</td>
+            <td>Returns True if the given command is available. False otherwise.</td>
+            <td>int command: The command to test.</td>
+            <td>bool val: True if the command is available, False otherwise.</td>
+        </tr>
+        
+        <tr>
+            <td>int MoveNext(int command</td>
+            <td>Applies the command to the machine and changes its state.<br />If the command is not applicable, throws an error.</td>
+            <td>int command: The command to apply.</td>
+            <td>bool state: The new state of the machine.</td>
+        </tr>
+        
+        <tr>
+            <td>ReadDataFromCSV(string filename, string delimiter)</td>
+            <td>Load the data from a .csv file to the machine.<br />
+            See "__Template_Machine.csv" in the Data folder to see how to format the file correctly.</td>
+            <td>string filename: the name of the file.<br />
+            string delimiter: the delimiter of the .csv file. Usually a comma.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>RemoveButton(int buttonID)</td>
+            <td>Remove the button corresponding with the button ID from the machine.</td>
+            <td>int buttonID: The ID of the button to remove.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>RemoveStackLight(int stacklightID)</td>
+            <td>Remove the stack light corresponding with the stack light ID from the machine.</td>
+            <td>int stacklightID: The ID of the stack light to remove.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>SafeMoveNext(int command)</td>
+            <td>Applies the command to the machine and changes its state.<br />
+            If the command is not applicable, do nothing.<br />
+            The returned status code will change depending on whether the transition could be applied or not</td>
+            <td>int command: The command to apply.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>SaveDataToCSV(string csvFileName, string delimiter)</td>
+            <td>Save the data of the machine to a .csv file that can then be loaded back.</td>
+            <td>string csvFileName: the name of the file.<br />
+            string delimiter: the delimiter of the .csv file. Usually a comma.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td style="color:red;">SaveDataToDB(string DBFileName)</td>
+            <td>Save the data of the machine to a .db file that can then be loaded back.</td>
+            <td>string DBFileName: the name of the file.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>SetMachineName(string name)</td>
+            <td>Change the name of the machine to the given input.</td>
+            <td>string name: The name of the machine.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>SetState(int state)</td>
+            <td>Set the state of the machine to the given input</td>
+            <td>int state: The new state of the machine.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>TriggerAlarm(int alarmID</td>
+            <td>Triggers the alarm with the corresponding id.</td>
+            <td>int alarmID: The ID of the alarm to trigger.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>TriggerButton(int buttonID)</td>
+            <td>Triggers the button with the corresponding id.</td>
+            <td>int buttonID: The ID of the button to trigger.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>TriggerStackLight(int stacklightID)</td>
+            <td>Triggers the stack light with the corresponding id.</td>
+            <td>int stacklightID: The ID of the stack light to trigger.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>UntriggerAlarm(int alarmID)</td>
+            <td>Untriggers the alarm with the corresponding id.</td>
+            <td>int alarmID: The ID of the alarm to turn off.</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>UntriggerStackLight(int stacklightID)</td>
+            <td>Untriggers the stack light with the corresponding id.</td>
+            <td>int stacklightID: The ID of the stack light to turn off.</td>
+            <td></td>
+        </tr>
+        
+        </table>
+    </div>
     </p>
     </div>
     
