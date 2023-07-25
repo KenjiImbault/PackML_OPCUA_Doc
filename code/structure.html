@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PackML_OPCUA: Code: Structure</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <a href="../index.html" >Go back</a>
+    <hr />
+    <h1>Code: Structure</h1>
+    <div class="content">
+        <p>
+        The program is divided into multiple files. In <span style="color:red;">red</span> are files that you usually wouldn't modify.<br />
+        It is important to distinguish the "helper" classes (PackMLStateModel.cs, Unit.cs, and Process.cs) from the "real" classes used in the OPCUA server (PackMLStateModelType, UnitType, and ProcessType)
+        
+        <div class="table-a">
+        <table style="text-align:center;">
+            <tr>
+                <th>File name</th>
+                <th>Description</th>
+            </tr>
+            
+            <tr>
+                <td>Program.cs</td>
+                <td>Starts the server.</td>
+            </tr>
+            
+            <tr>
+                <td>TestServerManager.cs</td>
+                <td>Defines actions to take once the server is started.</td>
+            </tr>
+            
+            <tr>
+                <td>PackMLStateMachineNodeManager.cs</td>
+                <td>Manages the nodes. Modify the overriden Startup() method to create instances of a class.</td>
+            </tr>
+            
+            <tr>
+                <td style="color:red">PackMLStateMachineClasses.cs</td>
+                <td>Defines the two classes (PackMLStateModel and UnitModel) that can be used to create instances in a OPCUA client.</td>
+            </tr>
+            
+            <tr>
+                <td style="color:red">PackMLStateMachineIdentifier.cs</td>
+                <td>Link all the objects to a node and defines constants. (Such as browse name, URI namespace...)</td>
+            </tr>
+            
+            <tr>
+                <td style="color:red">PackMLStateMachineTypes.cs</td>
+                <td>Define all the different types.</td>
+            </tr>
+            
+            <tr>
+                <td>PackMLStateModel.cs</td>
+                <td>Helper class that models a state machine. Parent class of Unit.cs</td>
+            </tr>
+            
+            <tr>
+                <td>PackMLStateModelTypeMethods.cs</td>
+                <td>Defines the implementation of the methods of the PackMLStateModelType class.</td>
+            </tr>
+            
+            <tr>
+                <td>Unit.cs</td>
+                <td>Helper class that defines a unit/a machine. Child class of PackMLStateModel.cs</td>
+            </tr>
+            
+            <tr>
+                <td>UnitTypeMethods.cs</td>
+                <td>Defines the implementation of the methods of the UnitType class.</td>
+            </tr>
+            
+            <tr>
+                <td>Process.cs</td>
+                <td>Helper class that defines a process.</td>
+            </tr>
+            
+            <tr>
+                <td>DBManager.cs</td>
+                <td>Class to control the database.</td>
+            </tr>
+        </table>
+        </div>
+        
+        </p>
+    </div>
+  </body>
+</html>
